@@ -9,11 +9,13 @@ import route from "./Routes/UserRoutes.js";
 const PORT = process.env.PORT || 5000
 dotenv.config()
 
-connectDB()
+
 
 const app = express()
 app.use(express.json())
 app.use(cors())
+
+connectDB()
 app.use("/api", route)
 
 if (process.env.ENV === 'development') {
